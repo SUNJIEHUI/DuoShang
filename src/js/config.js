@@ -1,0 +1,12 @@
+require.config({
+	//basUrl:'js',
+	paths:{
+		jquery:'./jquery-3.2.1',
+	},
+	shim:{
+		/*jqueryui:['jquery'],*/
+		/*vCode:{
+			exports:'./vCode'
+		}*/
+	}
+})

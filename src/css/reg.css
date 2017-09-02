@@ -1,0 +1,112 @@
+@charset "UTF-8";
+#_head { width: 100%; min-width: 1220px; background-color: #f3f3f3; }
+
+#_head .head-content { height: 30px; width: 1220px; margin: 0 auto; }
+
+#_head .head-content .head-left { float: left; font-size: 13px; line-height: 30px; }
+
+#_head .head-content .head-left a { margin-right: 5px; }
+
+#_head .head-content .head-left a:hover { color: red; }
+
+#_head .head-content .head-left span { margin: 5px; color: #666; font-family: "宋体"; }
+
+#_head .head-right { float: right; line-height: 30px; }
+
+#_head .head-right li { background-repeat: no-repeat; font-size: 13px; float: left; margin-right: 5px; }
+
+#_head .head-right li a { position: relative; left: 25px; }
+
+#_head .head-right li a:hover { color: red; }
+
+#_head .head-right li:nth-child(1) { width: 68px; background-image: url(../img/reg2.png); background-position: 0 2px; }
+
+#_head .head-right li:nth-child(2), #_head .head-right li:nth-child(3) { width: 80px; background-image: url(../img/reg2.png); background-position: 0 -52px; }
+
+#_head .head-right li:nth-child(4) { width: 80px; background-image: url(../img/reg2.png); background-position: 0 -81px; }
+
+#_body { width: 100%; }
+
+#_body .warp { width: 1000px; margin: 0 auto; }
+
+#_body .warp div:nth-child(1) { margin-top: 30px; }
+
+#_body .warp div:nth-child(2) .reg-title { border-bottom: 2px solid #e6e6e6; }
+
+#_body .warp div:nth-child(2) .reg-title li:first-child { top: 2px; position: relative; border-bottom: 2px solid #c40000; }
+
+#_body .warp div:nth-child(2) .reg-title li { float: left; font-size: 16px; font-weight: bold; color: #666; padding: 8px 35px; margin-right: 20px; margin: 0 50px; }
+
+#_body .warp div:nth-child(2) .reg-title li span { text-align: center; line-height: 20px; color: white; display: block; float: left; width: 20px; height: 20px; border-radius: 50%; background-color: #c40000; margin-right: 8px; font-weight: normal; }
+
+#_body .warp div:nth-child(2) .reg-content div { width: 50%; margin: 0 auto; margin-top: 50px; }
+
+#_body .warp div:nth-child(2) .reg-content div p { color: #3c3c3c; font-size: 13px; margin-bottom: 25px; }
+
+#_body .warp div:nth-child(2) .reg-content div p span { text-align: right; width: 80px; display: inline-block; }
+
+#_body .warp div:nth-child(2) .reg-content div .user input { width: 260px; height: 30px; }
+
+#_body .warp div:nth-child(2) .reg-content div .user i { color: #c40000; margin-left: 10px; font-style: normal; }
+
+#_body .warp div:nth-child(2) .reg-content div .psw input { width: 260px; height: 30px; }
+
+#_body .warp div:nth-child(2) .reg-content div .psw b { font-weight: normal; color: #c40000; margin-left: -18px; }
+
+#_body .warp div:nth-child(2) .reg-content div .psw i { cursor: pointer; display: inline-block; position: relative; top: 11px; left: -36px; width: 30px; height: 30px; background-image: url(../img/reg7.png); background-position: -30px -90px; background-repeat: no-repeat; }
+
+#_body .warp div:nth-child(2) .reg-content div .yzm span { margin-top: 7px; float: left; }
+
+#_body .warp div:nth-child(2) .reg-content div .yzm input { width: 110px; height: 30px; float: left; }
+
+#_body .warp div:nth-child(2) .reg-content div .yzm i { width: 70px; height: 34px; border: 1px solid #ccc; font-style: normal; display: block; float: left; margin-left: 10px; text-align: center; font-size: 22px; line-height: 34px; }
+
+#_body .warp div:nth-child(2) .reg-content div .yzm b { display: block; float: left; width: 28px; height: 25px; background-image: url(../img/reg8.jpg); margin-top: 5px; margin-left: 3px; cursor: pointer; }
+
+#_body .warp div:nth-child(2) .reg-content div .yzm .reg { margin-left: 10px; color: #c40000; }
+
+#_body .warp div:nth-child(2) .reg-content div div { float: left; font-size: 12px; width: 100%; margin-top: 0; margin-left: 50px; }
+
+#_body .warp div:nth-child(2) .reg-content div div input { position: relative; top: 2px; margin-right: 5px; }
+
+#_body .warp div:nth-child(2) .reg-content div div a { color: #005aa0; }
+
+#_body .warp div:nth-child(2) .reg-content div button { cursor: pointer; margin-left: 65px; margin-top: 20px; border: none; width: 300px; height: 34px; text-align: center; background-color: #c40000; color: white; border-radius: 5px; font-size: 16px; }
+
+#_foot { width: 100%; }
+
+#_foot .foot-content { width: 1220px; margin: 0 auto; }
+
+#_foot .foot-content .foot-top { height: 290px; background: url(../img/reg4.jpg) no-repeat center top; position: relative; border-bottom: 1px solid #ccc; padding-bottom: 15px; margin-bottom: 35px; }
+
+#_foot .foot-content .foot-top .f-title-h { font-size: 12px; height: 85px; width: 100%; position: absolute; top: 185px; }
+
+#_foot .foot-content .foot-top .f-title-h ul { margin-top: 8px; }
+
+#_foot .foot-content .foot-top .f-title-h li { margin-top: 4px; }
+
+#_foot .foot-content .foot-top .f-title-h .f-title { position: relative; display: inline-block; }
+
+#_foot .foot-content .foot-top .f-title-h li:nth-child(1) { left: 70px; }
+
+#_foot .foot-content .foot-top .f-title-h li:nth-child(2) { left: 108px; top: -40px; }
+
+#_foot .foot-content .foot-top .f-title-h li:nth-child(3) { left: 148px; top: -21px; }
+
+#_foot .foot-content .foot-top .f-title-h li:nth-child(4) { left: 230px; top: -40px; }
+
+#_foot .foot-content .foot-top .f-title-h li:nth-child(5) { left: 340px; top: -21px; }
+
+#_foot .foot-content .foot-top .f-title-h li:nth-child(6) { left: 424px; top: -21px; }
+
+#_foot .foot-content .foot-bottom { width: 100%; }
+
+#_foot .foot-content .foot-bottom div { text-align: center; font-size: 12px; color: #666; }
+
+#_foot .foot-content .foot-bottom div a:hover { text-decoration: underline; }
+
+#backTop { width: 57px; height: 52px; background-image: url(../img/backTop.png); position: fixed; bottom: 20px; right: 0; cursor: pointer; }
+
+#rightSide { background-image: url(../img/rightSide.png); width: 210px; height: 445px; position: fixed; right: -177px; }
+
+#rightSide span { position: absolute; height: 130px; width: 40px; top: 155px; cursor: pointer; }
