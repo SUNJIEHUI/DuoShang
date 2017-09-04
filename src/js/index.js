@@ -1,0 +1,45 @@
+require(['config'],function(){
+	require(['jquery','lunbo'],function($,lb){
+		//$('#h_foot').load('./html/footer.html',function(){
+			var li = $('.allClass').children().eq(1).children().children();
+			for(var i=0;i<li.length;i++){
+				$(li).eq(i).on('mouseenter',function(){
+					$(this).css('backgroundColor','white');
+					$div = $('<div/>').addClass('zhezhao');
+					$(this).append($div);
+					$('.zhezhao').css('backgroundColor','white');
+					$(this).children().children().eq(0).css('backgroundImage','url(./img/idx10.png)');
+					$(this).children().children().eq(1).css('color','red');
+					$(this).children().children().eq(3).children().css('color','#666');
+					$(this).children().children().eq(3).on('mouseenter','a',function(){
+						$(this).css('color','red');
+					}).on('mouseleave','a',function(){
+						$(this).css('color','#666');
+					})
+					$($(this).children()[1]).css('display','block');
+				}).on('mouseleave',function(){
+					$('.zhezhao').remove();
+					$($(this).children()[1]).css('display','none');
+					$(this).css('backgroundColor','#222');
+					$(this).children().children().eq(0).css('backgroundImage','url(./img/idx6.png)');
+					$(this).children().children().eq(1).css('color','white');
+					$(this).children().children().eq(3).children().css('color','white');
+				})
+			}
+			$('.lunbo1').carousel({
+				imglist:['./img/lunbo1.jpg','./img/lunbo2.jpg','./img/lunbo3.jpg','./img/lunbo4.jpg','./img/lunbo5.jpg'],
+				page:'center',
+				width:529,
+				height:267,
+				type:'top'
+			});
+			$('.lunbo2').carousel({
+				imglist:['./img/lunbo5.jpg','./img/lunbo4.jpg','./img/lunbo3.jpg','./img/lunbo2.jpg','./img/lunbo1.1.jpg'],
+				page:'right',
+				width:529,
+				height:207,
+				type:'top'
+			});
+		//})
+	})
+})

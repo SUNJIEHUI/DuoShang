@@ -2,9 +2,10 @@ require.config({
 	//basUrl:'js',
 	paths:{
 		jquery:'./jquery-3.2.1',
+		lunbo:'../lib/lunbo/jquery-carousel'
 	},
 	shim:{
-		/*jqueryui:['jquery'],*/
+		lunbo:['jquery'],
 		/*vCode:{
 			exports:'./vCode'
 		}*/
