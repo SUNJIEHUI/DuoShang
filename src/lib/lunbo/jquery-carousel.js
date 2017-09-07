@@ -8,7 +8,7 @@
 			showSmall : false,
 			showButton : true,
 			page : 'center',
-			time : 2000,
+			time : 3000,
 			index : 0,
 			type : 'top'
 		}

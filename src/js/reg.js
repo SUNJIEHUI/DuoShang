@@ -113,7 +113,7 @@ require(['config'],function(){
 
 
 			//右边弹窗
-			$('#rightSide').css({top:$('body').scrollTop()/2})
+			$('#rightSide').css({top:$(window).height()/2-$('#rightSide').height()/2})
 			$('#rightSide span').on('click',function(){
 				if($('#rightSide').hasClass('active')){
 					$('#rightSide').removeClass('active');

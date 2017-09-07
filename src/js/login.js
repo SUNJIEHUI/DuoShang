@@ -19,11 +19,11 @@ require(['config'],function(){
 				var arr = item.split('=');
 				if(arr[0] === 'username'){
 					username = arr[1];
-					console.log(username);
+					//console.log(username);
 				}
 				if(arr[0] === 'password'){
 					password = arr[1];
-					console.log(password);
+					//console.log(password);
 				}
 			})
 			var xhr = new XMLHttpRequest();
@@ -32,7 +32,7 @@ require(['config'],function(){
 					console.log(xhr.responseText);
 					if(xhr.responseText == 'true'){
 						console.log(666);
-						//location.href = '../index.html';
+						location.href = '../index.html';
 					}else{}
 				}
 			}
@@ -55,10 +55,10 @@ require(['config'],function(){
 								if($($('input')[2]).prop('checked')){
 									var now = new Date();
 									now.setDate(now.getDate() + 7);
-									document.cookie = 'username=' + user + ';expires=' + now.toString();
-									document.cookie = 'password=' + psw + ';expires=' + now.toString();
+									document.cookie = 'username=' + user + ";path = /" + ';expires=' + now.toString();
+									document.cookie = 'password=' + psw + ";path = /" + ';expires=' + now.toString();
 								}
-								//location.href = '../index.html';
+								location.href = '../index.html';
 							}else{
 								alert('用户名/密码有误');
 							}
