@@ -1,44 +1,5 @@
 $color:#666;
 
-#_head{
-    width:100%;
-    min-width: 1220px;
-    background-color:#f3f3f3;
-    .head-content{
-        height:30px;
-        width:1220px;
-        margin: 0 auto;
-        .head-left{
-            float:left;
-            font-size:13px;
-            line-height:30px;
-            a{margin-right:5px;}
-            a:hover{color:red;}
-            span{margin:5px;color:$color;font-family: "宋体";}
-        }
-    }
-    .head-right{
-        float:right;
-        line-height:30px;
-        li{background-repeat:no-repeat;font-size:13px;float:left;margin-right:5px;a{position:relative;left:25px;}a:hover{color:red;}}
-        & li:nth-child(1){
-            width:68px;
-            background-image:url(../img/reg2.png);
-            background-position:0 2px;
-        }
-        & li:nth-child(2),& li:nth-child(3){
-            width:80px;
-            background-image:url(../img/reg2.png);
-            background-position:0 -52px;
-        }
-        & li:nth-child(4){
-            width:80px;
-            background-image:url(../img/reg2.png);
-            background-position:0 -81px;
-        }
-    }
-}
-
 #_body{
     width:100%;
     .warp{
@@ -197,30 +158,5 @@ $color:#666;
                 a:hover{text-decoration:underline;}
             }
         }
-    }
-}
-
-#backTop{
-    width:57px;
-    height:52px;
-    background-image:url(../img/backTop.png);
-    position:fixed;
-    bottom:20px;
-    right:0;
-    cursor:pointer;
-}
-
-#rightSide{
-    background-image:url(../img/rightSide.png);
-    width:210px;
-    height:445px;
-    position:fixed;
-    right:-177px;
-    span{
-        position:absolute;
-        height:130px;
-        width:40px;
-        top:155px;
-        cursor:pointer;
     }
 }

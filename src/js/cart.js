@@ -1,70 +1,109 @@
 require(['config'],function(){
 	require(['jquery'],function($){
+		$('#c_head').load('../html/header.html');
+		$('#c_foot').load('../html/footer.html');
+		$('#c_nav').load('../html/nav.html',function(){
+			
 
 
+			require(['all'],function(){
 
-		$('#l_head').load('../html/header.html');
-		//$('#l_foot').load('../html/footer.html');
-		$('#l_nav').load('../html/nav.html',function(){
-			
-			
-			
-			//二级菜单移入触发
-			var li = $('.allClass').children().eq(1).children().children();
-			$('.allClass').children().eq(1).css('display','none');
-			$('.allClass').on('mouseenter',function(){
-				$('.allClass').children().eq(1).css('display','block');
-				for(var i=0;i<li.length;i++){
-					$(li).eq(i).on('mouseenter',function(){
-						$(this).css('backgroundColor','white');
-						$div = $('<div/>').addClass('zhezhao');
-						$(this).append($div);
-						$('.zhezhao').css('backgroundColor','white');
-						$(this).children().children().eq(0).css('backgroundImage','url(/img/idx10.png)');
-						$(this).children().children().eq(1).css('color','red');
-						$(this).children().children().eq(3).children().css('color','#666');
-						$(this).children().children().eq(3).on('mouseenter','a',function(){
-							$(this).css('color','red');
-						}).on('mouseleave','a',function(){
-							$(this).css('color','#666');
+
+				$.ajax({
+					type:'GET',
+					url:'../js/php/cart1.php',
+					success:function(data){
+
+
+						//数据生成
+						var res = JSON.parse(data);
+						res.forEach(function(item){
+							var tr = $('<tr/>');
+							tr.prop('data-id',item.id);
+							var zong = item.qty*item.price;
+							tr.html(`
+									<td class="p1">
+										<p>
+											<a href="#"><img src="${item.url}"></a>
+										</p>
+										<h3>
+											<a href="#">${item.name}</a>
+										</h3>
+									</td>
+									<td class="p2">
+										<span class="u_price">¥${item.price}</span>
+									</td>
+									<td class="p2">
+										<img src="/img/c3.gif">
+										<input type="text" value="${item.qty}">
+										<img src="/img/c4.gif">
+									</td>
+									<td class="p2">
+										<span class="price">¥${zong}</span>
+									</td>
+									<td class="p2">
+										<a class="deleat" href="#">删除</a>
+									</td>
+								`)
+							$('tbody').append(tr);
 						})
-						$($(this).children()[1]).css('display','block');
-					}).on('mouseleave',function(){
-						$('.zhezhao').remove();
-						$($(this).children()[1]).css('display','none');
-						$(this).css('backgroundColor','#222');
-						$(this).children().children().eq(0).css('backgroundImage','url(/img/idx6.png)');
-						$(this).children().children().eq(1).css('color','white');
-						$(this).children().children().eq(3).children().css('color','white');
-					})
-				}
-			}).on('mouseleave',function(){
-				$('.allClass').children().eq(1).css('display','none');
+
+
+
+						//数量
+						$('.p2 img:even').on('click',function(){
+							var val = $(this).siblings('input').val();
+							if(val>1){
+								val--;
+							}else{
+								val=1;
+							}
+							$(this).siblings('input').val(val);
+							money($(this));
+						})
+						$('.p2 img:odd').on('click',function(){
+							var val = $(this).siblings('input').val();
+							val++;
+							$(this).siblings('input').val(val);
+							money($(this));
+						})
+
+
+
+						//计算价钱
+						function money(a){
+							var num = a.siblings('input').parent().siblings().find('.u_price').text().replace('¥','')*a.siblings('input').val();
+							a.parent().siblings().find('.price').html('¥'+num);
+							he();
+						}
+						function he(){
+							var pri = $('.price');
+							var zong = 0;
+							for(var i=0;i<pri.length;i++){
+								zong += $('.price').eq(i).text().replace('¥','')*1
+							}		
+							$('.buy strong').html('¥'+zong);
+						}
+						he();
+
+
+
+						//删除商品
+						$('.deleat').on('click',function(){
+							var id = $(this).closest('tr').prop('data-id');
+							$.ajax({
+								type:'GET',
+								url:'../js/php/cart1.php',
+								data:'id='+id,
+								success:function(data){
+									console.log(data);
+								}
+							})
+							$(this).closest('tr').remove();
+						})
+					}
+				})
 			})
-
-
-
-			//回到顶部
-			$('#backTop').on('click',function(){	
-  				$('body,html').animate({scrollTop:0},'fast');
-			})
-
-
-
-			//右边弹窗
-			$('#rightSide').css({top:$(window).height()/2-$('#rightSide').height()/2})
-			$('#rightSide span').on('click',function(){
-				if($('#rightSide').hasClass('active')){
-					$('#rightSide').removeClass('active');
-					$('#rightSide').animate({right:-210}).animate({right:-177});
-				}else{
-					$('#rightSide').addClass('active');
-					$('#rightSide').animate({right:-210}).animate({right:0});
-				}
-			})
-			
-			
-			
 		})
 	})
 })

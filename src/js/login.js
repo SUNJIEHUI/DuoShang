@@ -4,6 +4,7 @@ require(['config'],function(){
 
 
 		//加载尾部
+		
 		$('#l-foot').load('../html/footer.html',function(){
 			//尾部修改遮罩
 			$('#_foot').append($('<div/>').addClass('zhe'));
@@ -57,6 +58,9 @@ require(['config'],function(){
 									now.setDate(now.getDate() + 7);
 									document.cookie = 'username=' + user + ";path = /" + ';expires=' + now.toString();
 									document.cookie = 'password=' + psw + ";path = /" + ';expires=' + now.toString();
+								}else{
+									document.cookie = 'username=' + user + ";path = /";
+									document.cookie = 'password=' + psw + ";path = /";
 								}
 								location.href = '../index.html';
 							}else{

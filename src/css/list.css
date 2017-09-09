@@ -64,7 +64,7 @@
 
 #h_nav .n_warp .allClass div ul li div { width: 206px; position: relative; top: -1px; margin: 0 auto; border-bottom: 1px dotted white; }
 
-#h_nav .n_warp .allClass div ul li div i { background-image: url(./img/idx6.png); background-position: 0px -6px; display: inline-block; width: 20px; height: 33px; margin: 2px 8px 0 0; float: left; }
+#h_nav .n_warp .allClass div ul li div i { background-image: url(/img/idx6.png); background-position: 0px -6px; display: inline-block; width: 20px; height: 33px; margin: 2px 8px 0 0; float: left; }
 
 #h_nav .n_warp .allClass div ul li div span { font-size: 13px; float: left; }
 
@@ -177,6 +177,8 @@
 #l_goods .g_warp .l_title span { position: absolute; top: 15px; left: 578px; }
 
 #l_goods .g_warp ul li { float: left; width: 218px; background: #fff; padding: 8px; border: 1px solid #e8e8e8; margin: 0 4px 8px; }
+
+#l_goods .g_warp ul li:hover { z-index: 8; box-shadow: 0 0 8px rgba(0, 0, 0, 0.7); }
 
 #l_goods .g_warp ul li a { display: block; }
 

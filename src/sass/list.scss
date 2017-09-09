@@ -144,7 +144,7 @@ $color:#666;
                             margin:0 auto;
                             border-bottom: 1px dotted white;
                             i{
-                                background-image:url(./img/idx6.png);
+                                background-image:url(/img/idx6.png);
                                 background-position:0px -6px;
                                 display: inline-block;
                                 width: 20px;
@@ -391,6 +391,7 @@ $color:#666;
                 padding: 8px;
                 border: 1px solid #e8e8e8;
                 margin: 0 4px 8px;
+                &:hover{z-index:8;box-shadow:0 0 8px rgba(0, 0, 0, 0.7);}
                 a{display:block;}
                 .pic{
                     width: 218px;

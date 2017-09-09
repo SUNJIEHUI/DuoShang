@@ -7,7 +7,7 @@
 
 
 	if($psw == '' && $user != ''){
-		$sql = "select username from users where username='$user'";
+		$sql = "select username from personal where username='$user'";
 
 		$result = $conn->query($sql);
 
@@ -18,7 +18,7 @@
 		$psw = md5($psw);
 
 
-		$sql = "insert into users (username,password) values('$user','$psw')";
+		$sql = "insert into personal (username,password) values('$user','$psw')";
 
 
 		$result = $conn->query($sql);

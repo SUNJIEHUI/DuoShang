@@ -66,7 +66,7 @@ body { height: 3000px; }
 
 #h_nav .n_warp .allClass div ul li div { width: 206px; position: relative; top: -1px; margin: 0 auto; border-bottom: 1px dotted white; }
 
-#h_nav .n_warp .allClass div ul li div i { background-image: url(../img/idx6.png); background-position: 0px -6px; display: inline-block; width: 20px; height: 33px; margin: 2px 8px 0 0; float: left; }
+#h_nav .n_warp .allClass div ul li div i { background-image: url(/img/idx6.png); background-position: 0px -6px; display: inline-block; width: 20px; height: 33px; margin: 2px 8px 0 0; float: left; }
 
 #h_nav .n_warp .allClass div ul li div span { font-size: 13px; float: left; }
 
