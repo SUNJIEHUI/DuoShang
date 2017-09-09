@@ -135,18 +135,18 @@ require(['config'],function(){
 												var big = $('.c_big');
 												var img = big.clone();
 												var car = $('.buycar');
-												img.css({'z-index':99,'width':big.offset().width,'position':'absolute','top':big.position().top,'left':big.position().left})
+												img.css({'z-index':99,'width':big.offset().width,'position':'fixed','top':big.position().top,'left':big.position().left})
 												$('.right').append(img);
 												console.log(car[0].offsetTop);
 												img.animate({
 													'width':20,
 													'height':20,
-													'top':window.scrollY,
+													'top':'577px',
 													'left':car.position().left
 												},1000,function(){
 													img.remove();
+													alert('已放进购物车');
 												})
-												//alert('已放进购物车');
 											}
 										}
 									})
