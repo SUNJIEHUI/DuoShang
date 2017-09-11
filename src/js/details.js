@@ -24,8 +24,9 @@ require(['config'],function(){
 						res = JSON.parse(data);
 						price = res.price;
 						$('.t_warp h1').html(res.name);
-						$('.c_big').attr('src',res.url);
-						$('.c_big').siblings('ul').find('img:even').attr('src',res.url);
+						$('.c_big').prop('src',res.url);
+						$('.zoom img').prop('src',res.url);
+						$('.c_big').parent().siblings('ul').find('img:even').attr('src',res.url);
 						$('.c_left div')[1].innerHTML = `<p>≥1件</p>
 														<p>${res.price}<b>分销价</b></p>
 														`
@@ -37,16 +38,55 @@ require(['config'],function(){
 
 
 
+				//放大镜
+				$('.bbimg').on('mouseenter',function(){
+					$('.zoom').css('display','block');
+					$('.minzoom').css('display','block');
+				}).on('mouseleave',function(){
+					$('.zoom').css('display','none');
+					$('.minzoom').css('display','none');
+				})
+				var bbox = $('.bbimg');
+				var bmove = $('.minzoom');
+				var b_bimg = $('.c_small');
+				var bbimg = $('.zoom');
+				$('.bbimg').on('mousemove',function(e){
+					var x = e.pageX;
+					var y = e.pageY;
+					var t = bbox.offset().top;
+    				var l = bbox.offset().left;
+    				var _left = x - l - bmove.outerWidth()/2;
+   					var _top = y - t -bmove.outerHeight()/2;
+   					if(_top<=0){
+				      _top = 0;
+   					}
+				    else if(_top>=bbox[0].offsetHeight-bmove[0].offsetHeight)
+				      _top = bbox[0].offsetHeight-bmove[0].offsetHeight;
+				    if(_left<=0){
+				      _left=0;
+				    }
+				    else if(_left>=bbox[0].offsetWidth-bmove[0].offsetWidth){
+				      _left=bbox[0].offsetWidth-bmove[0].offsetWidth;
+				    }
+					bmove.css({'left':_left,'top':_top});
+					var w = _left/(bbox[0].offsetWidth-bmove[0].offsetWidth);
+    				var h = _top/(bbox[0].offsetHeight-bmove[0].offsetHeight);
+    				var b_bimg_top = (b_bimg[0].offsetHeight-bbimg[0].offsetHeight)*h;
+				    var b_bimg_left = (b_bimg[0].offsetWidth-bbimg[0].offsetWidth)*w;
+				    b_bimg.css({'top':-b_bimg_top,'left':-b_bimg_left});
+    			})
+				
+
+
+
 				//展示图替换
 				$('.c_right li img').on('mouseenter',function(){
 					var s_url = $(this).prop('src');
 					$(this).parent().siblings().find('img').css('border','1px solid #e7e7e7');
 					$(this).css('border','1px solid red');
 					$('.c_big').prop('src',s_url);
+					$('.zoom img').prop('src',s_url);
 				})
-				/*var imgUrl = $('.c_big').prop('src');
-				console.log(imgUrl)
-				$('.zoom img').prop('src',imgUrl);*/
 
 
 

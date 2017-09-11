@@ -24,11 +24,15 @@
 
 #c_content .c_wrap .c_right .right { padding: 10px; width: 420px; float: left; position: relative; }
 
-#c_content .c_wrap .c_right .right .c_big { width: 420px; height: 420px; }
+#c_content .c_wrap .c_right .right .bbimg { width: 420px; height: 420px; }
 
-#c_content .c_wrap .c_right .right .zoom { width: 420px; height: 420px; position: absolute; border: 1px solid red; top: 9px; left: 435px; z-index: 99; }
+#c_content .c_wrap .c_right .right .bbimg .c_big { width: 420px; height: 420px; }
 
-#c_content .c_wrap .c_right .right .zoom img { width: 820px; height: 820px; }
+#c_content .c_wrap .c_right .right .bbimg .minzoom { display: none; margin: 10px; position: absolute; width: 215px; height: 215px; border: 1px solid #fc0; background-color: rgba(255, 255, 0, 0.3); filter: alpha(Opacity=30); }
+
+#c_content .c_wrap .c_right .right .zoom { width: 420px; height: 420px; display: none; overflow: hidden; position: absolute; top: 10px; left: 435px; z-index: 99; }
+
+#c_content .c_wrap .c_right .right .zoom img { width: 820px; height: 820px; position: absolute; }
 
 #c_content .c_wrap .c_right .right ul li { margin: 11px; float: left; }
 
