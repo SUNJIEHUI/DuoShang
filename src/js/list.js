@@ -13,7 +13,7 @@ require(['config'],function(){
 				//请求数据
 				var page = 1;
 				var qty = 10;
-				var last = page;
+				var last = qty;
 				$.ajax({
 					type:'GET',
 					url:'../js/php/list.php',
@@ -42,16 +42,14 @@ require(['config'],function(){
 								</li>	
 							`
 						}).join('');
-						/*page++;
-						qty+=10;*/
+						qty+=10;
 					}
 				})
 
 
 				
 				$(window).on('scroll',function(){
-					if($(this).scrollTop() >= ($(document.body).height()-$(window).height())-300/* && last !== page*/){
-					console.log(666);
+					if($(this).scrollTop() >= ($(document.body).height()-$(window).height())-350 && qty !== last){
 						$.ajax({
 							type:'GET',
 							url:'../js/php/list.php',
@@ -80,13 +78,11 @@ require(['config'],function(){
 										</li>	
 									`
 								}).join('');
-								/*last = page;
-								console.log(Math.ceil(res.total/res.qty));
-								if(page<Math.ceil(res.total/res.qty)){*/
-									//page++;
-									//console.log(page);
+								last = qty;
+								console.log(qty,last);
+								if(qty<50){
 									qty+=10;
-								//}
+								}
 							}
 						})
 					}
